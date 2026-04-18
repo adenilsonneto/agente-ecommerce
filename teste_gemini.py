@@ -1,11 +1,15 @@
 import os
 from dotenv import load_dotenv
-import google.generativeai as genai
+import google.genai as genai
 
 load_dotenv()
 
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
-model = genai.GenerativeModel("gemini-2.5-flash")
-resposta = model.generate_content("Olá! Responda em português: o que é SQL?")
+client = genai.Client(api_key=os.getenv("GOOGLE_API_KEY"))
+
+resposta = client.models.generate_content(
+    model="gemini-2.5-flash-lite",
+    contents="Olá! Responda em português: o que é SQL?"
+)
+
 print(resposta.text)
