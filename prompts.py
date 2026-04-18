@@ -33,6 +33,38 @@ def get_system_prompt() -> str:
     
     Obs: "Pedidos" e "Vendas" referem-se à mesma coisa neste contexto.
     
+    EXEMPLOS DE QUERIES CORRETAS:
+
+    Produtos mais vendidos (quantidade = COUNT de itens vendidos)
+    SELECT p.nome_produto, p.categoria_produto, COUNT(i.id_item) AS quantidade_vendida
+    FROM fat_itens_pedidos i
+    JOIN dim_produtos p ON i.id_produto = p.id_produto
+    GROUP BY p.id_produto, p.nome_produto, p.categoria_produto
+    ORDER BY quantidade_vendida DESC
+    LIMIT 10;
+
+    Total de pedidos
+    
+    SELECT COUNT(DISTINCT id_pedido) AS total_pedidos FROM fat_pedidos;
+
+    Receita total por categoria
+
+    SELECT p.categoria_produto, ROUND(SUM(i.preco_BRL), 2) AS receita_total
+    FROM fat_itens_pedidos i
+    JOIN dim_produtos p ON i.id_produto = p.id_produto
+    GROUP BY p.categoria_produto
+    ORDER BY receita_total DESC;
+
+    Média de avaliação geral
+    SELECT ROUND(AVG(avaliacao), 2) AS media_geral FROM fat_avaliacoes_pedidos;
+
+    Estados com mais consumidores
+    SELECT estado, COUNT(*) AS total
+    FROM dim_consumidores
+    GROUP BY estado
+    ORDER BY total DESC
+    LIMIT 5;
+    
     Responda às perguntas usando apenas os dados disponíveis no banco. 
     Se a pergunta não puder ser respondida com os dados, informe que não é possível responder.
     """
