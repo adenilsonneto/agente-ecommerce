@@ -1,6 +1,7 @@
 # Agente GenAI — Análise de E-Commerce
 Agente de IA com capacidade Text-to-SQL para consultar e analisar dados de um e-commerce usando linguagem natural.
-## Stack- Python 3.10+
+## Stack
+- Python 3.10+
 - Google Gemini 2.5 Flash
 - SQLite (banco.db — fornecido)
 - google.genai, pandas, python-dotenv
