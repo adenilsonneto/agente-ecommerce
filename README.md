@@ -20,7 +20,9 @@ venv\Scripts\activate # Windows
 pip install -r requirements.txt
 ### 4. Configure a API Key
 Crie um arquivo .env na raiz do projeto:
+
 GEMINI_API_KEY=sua_chave_aqui
+
 Obtenha sua chave em: https://aistudio.google.com
 ### 5. Coloque o banco de dados
 Copie o arquivo do seu banco de dados para a raiz do projeto.
@@ -28,8 +30,11 @@ Copie o arquivo do seu banco de dados para a raiz do projeto.
 python agente.py
 ## Exemplos de perguntas
 - "Quais são os 10 produtos mais vendidos?"
+
 - "Qual estado tem mais consumidores?"
+
 - "Qual é a média de avaliação dos pedidos?"
+
 - "Quais categorias têm mais avaliações negativas?"
 ## Execute para conferir as respostas
 python testar_sql.py
