@@ -1,10 +1,11 @@
 import sqlite3
 import pandas as pd
 from typing import Optional
+import os
 
-DB_PATH = 'banco.db'
+DB_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "banco.db") #procura o banco na mesma pasta que o script database.py
 
-def executar_sql(query: str) -> list: #executa uma query SQL e retorna uma lista de dicionarios
+def executar_sql(sql: str) -> list: #executa uma query SQL e retorna uma lista de dicionarios
     try:
         conn = sqlite3.connect(DB_PATH)
         sql_upper = sql.strip().upper()
