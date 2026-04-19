@@ -11,8 +11,8 @@ git clone https://github.com/adenilsonneto/agente-ecommerce.git
 cd agente-ecommerce
 ### 2. Crie o ambiente virtual
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-venv\Scripts\activate     # Windows
+source venv/bin/activate # Linux/Mac
+venv\Scripts\activate # Windows
 ### 3. Instale as dependências
 pip install -r requirements.txt
 ### 4. Configure a API Key
