@@ -1,4 +1,5 @@
 .env
 vevn/
 __pycache__/
+banco.db
 *.pyc
