@@ -8,10 +8,13 @@ Agente de IA com capacidade Text-to-SQL para consultar e analisar dados de um e-
 ## Como executar:
 ### 1. Clone o repositório
 git clone https://github.com/adenilsonneto/agente-ecommerce.git
+
 cd agente-ecommerce
 ### 2. Crie o ambiente virtual
 python -m venv venv
+
 source venv/bin/activate # Linux/Mac
+
 venv\Scripts\activate # Windows
 ### 3. Instale as dependências
 pip install -r requirements.txt
